@@ -3,6 +3,7 @@ package com.test.win.intro;
 import android.app.Fragment;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.support.annotation.IdRes;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.NonNull;
 import android.support.v4.content.ContextCompat;
@@ -26,7 +27,7 @@ public class CustomTutorialFragment extends TutorialFragment
         implements OnTutorialPageChangeListener {
 
     private static final String TAG = "CustomTutorialFragment";
-    private static final int TOTAL_PAGES = 6;
+    private static final int TOTAL_PAGES = 3;
     private static final int ACTUAL_PAGES_COUNT = 3;
 
     private final View.OnClickListener mOnSkipClickListener = new View.OnClickListener() {
@@ -36,6 +37,31 @@ public class CustomTutorialFragment extends TutorialFragment
         }
     };
 
+
+    @LayoutRes
+    protected int getLayoutResId() {
+        return R.layout.fragment_presentation;
+    }
+
+    @IdRes
+    protected int getViewPagerResId() {
+        return com.cleveroad.slidingtutorial.R.id.viewPager;
+    }
+
+    @IdRes
+    protected int getIndicatorResId() {
+        return com.cleveroad.slidingtutorial.R.id.indicator;
+    }
+
+    @IdRes
+    protected int getButtonSkipResId() {
+        return R.id.tvSkipMy;
+    }
+
+    @IdRes
+    protected int getSeparatorResId() {
+        return com.cleveroad.slidingtutorial.R.id.separator;
+    }
     private final TutorialPageOptionsProvider mTutorialPageOptionsProvider = new TutorialPageOptionsProvider() {
         @NonNull
         @Override
@@ -48,40 +74,40 @@ public class CustomTutorialFragment extends TutorialFragment
                     pageLayoutResId = R.layout.fragment_page_first;
                     tutorialItems = new TransformItem[]{
                             TransformItem.create(R.id.ivFirstImage, Direction.LEFT_TO_RIGHT, 0.2f),
-                            TransformItem.create(R.id.ivSecondImage, Direction.RIGHT_TO_LEFT, 0.06f),
-                            TransformItem.create(R.id.ivThirdImage, Direction.LEFT_TO_RIGHT, 0.08f),
-                            TransformItem.create(R.id.ivFourthImage, Direction.RIGHT_TO_LEFT, 0.1f),
-                            TransformItem.create(R.id.ivFifthImage, Direction.RIGHT_TO_LEFT, 0.03f),
-                            TransformItem.create(R.id.ivSixthImage, Direction.RIGHT_TO_LEFT, 0.09f),
-                            TransformItem.create(R.id.ivSeventhImage, Direction.RIGHT_TO_LEFT, 0.14f),
-                            TransformItem.create(R.id.ivEighthImage, Direction.RIGHT_TO_LEFT, 0.07f)
+//                            TransformItem.create(R.id.ivSecondImage, Direction.RIGHT_TO_LEFT, 0.06f),
+//                            TransformItem.create(R.id.ivThirdImage, Direction.LEFT_TO_RIGHT, 0.08f),
+//                            TransformItem.create(R.id.ivFourthImage, Direction.RIGHT_TO_LEFT, 0.1f),
+//                            TransformItem.create(R.id.ivFifthImage, Direction.RIGHT_TO_LEFT, 0.03f),
+//                            TransformItem.create(R.id.ivSixthImage, Direction.RIGHT_TO_LEFT, 0.09f),
+//                            TransformItem.create(R.id.ivSeventhImage, Direction.RIGHT_TO_LEFT, 0.14f),
+//                            TransformItem.create(R.id.ivEighthImage, Direction.RIGHT_TO_LEFT, 0.07f)
                     };
                     break;
                 }
                 case 1: {
-                    pageLayoutResId = R.layout.fragment_page_third;
+                    pageLayoutResId = R.layout.fragment_page_second;
                     tutorialItems = new TransformItem[]{
                             TransformItem.create(R.id.ivFirstImage, Direction.RIGHT_TO_LEFT, 0.2f),
-                            TransformItem.create(R.id.ivSecondImage, Direction.LEFT_TO_RIGHT, 0.06f),
-                            TransformItem.create(R.id.ivThirdImage, Direction.RIGHT_TO_LEFT, 0.08f),
-                            TransformItem.create(R.id.ivFourthImage, Direction.LEFT_TO_RIGHT, 0.1f),
-                            TransformItem.create(R.id.ivFifthImage, Direction.LEFT_TO_RIGHT, 0.03f),
-                            TransformItem.create(R.id.ivSixthImage, Direction.LEFT_TO_RIGHT, 0.09f),
-                            TransformItem.create(R.id.ivSeventhImage, Direction.LEFT_TO_RIGHT, 0.14f)
+//                            TransformItem.create(R.id.ivSecondImage, Direction.LEFT_TO_RIGHT, 0.06f),
+//                            TransformItem.create(R.id.ivThirdImage, Direction.RIGHT_TO_LEFT, 0.08f),
+//                            TransformItem.create(R.id.ivFourthImage, Direction.LEFT_TO_RIGHT, 0.1f),
+//                            TransformItem.create(R.id.ivFifthImage, Direction.LEFT_TO_RIGHT, 0.03f),
+//                            TransformItem.create(R.id.ivSixthImage, Direction.LEFT_TO_RIGHT, 0.09f),
+//                            TransformItem.create(R.id.ivSeventhImage, Direction.LEFT_TO_RIGHT, 0.14f)
                     };
                     break;
                 }
                 case 2: {
-                    pageLayoutResId = R.layout.fragment_page_second;
+                    pageLayoutResId = R.layout.fragment_page_third;
                     tutorialItems = new TransformItem[]{
                             TransformItem.create(R.id.ivFirstImage, Direction.RIGHT_TO_LEFT, 0.2f),
                             TransformItem.create(R.id.ivSecondImage, Direction.LEFT_TO_RIGHT, 0.06f),
-                            TransformItem.create(R.id.ivThirdImage, Direction.RIGHT_TO_LEFT, 0.08f),
-                            TransformItem.create(R.id.ivFourthImage, Direction.LEFT_TO_RIGHT, 0.1f),
-                            TransformItem.create(R.id.ivFifthImage, Direction.LEFT_TO_RIGHT, 0.03f),
+//                            TransformItem.create(R.id.ivThirdImage, Direction.RIGHT_TO_LEFT, 0.08f),
+                      //      TransformItem.create(R.id.ivFourthImage, Direction.LEFT_TO_RIGHT, 0.1f),
+                     //       TransformItem.create(R.id.ivFifthImage, Direction.LEFT_TO_RIGHT, 0.03f),
                             TransformItem.create(R.id.ivSixthImage, Direction.LEFT_TO_RIGHT, 0.09f),
-                            TransformItem.create(R.id.ivSeventhImage, Direction.LEFT_TO_RIGHT, 0.14f),
-                            TransformItem.create(R.id.ivEighthImage, Direction.LEFT_TO_RIGHT, 0.07f)
+                      //      TransformItem.create(R.id.ivSeventhImage, Direction.LEFT_TO_RIGHT, 0.14f),
+                     //       TransformItem.create(R.id.ivEighthImage, Direction.LEFT_TO_RIGHT, 0.07f)
                     };
                     break;
                 }
@@ -119,7 +145,7 @@ public class CustomTutorialFragment extends TutorialFragment
         super.onCreate(savedInstanceState);
         if (pagesColors == null) {
             pagesColors = new int[]{
-                    ContextCompat.getColor(getActivity(), android.R.color.darker_gray),
+                    ContextCompat.getColor(getActivity(), android.R.color.holo_orange_dark),
                     ContextCompat.getColor(getActivity(), android.R.color.holo_green_dark),
                     ContextCompat.getColor(getActivity(), android.R.color.holo_red_dark),
                     ContextCompat.getColor(getActivity(), android.R.color.holo_blue_dark),

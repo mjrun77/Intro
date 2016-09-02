@@ -1,9 +1,8 @@
 <resources>
     <string name="app_name">Intro</string>
     <string name="title_activity_main">MainActivity</string>
-    <string name="hello_world">Hello world!</string>
-    <string name="action_settings">Settings</string>
-    <string name="text_web_ceo">WEB ANALYTICS</string>
-    <string name="text_web_dev">WEB DEVELOPER</string>
-    <string name="text_e_commerce">e-Commerce</string>
+    <string name="text_intro_1">Добавляй фотографии интересных мест и объектов</string>
+    <string name="text_intro_2">Создавай свои маршруты или путешествуй по готовым маршрутам других пользователей</string>
+    <string name="text_intro_3">Зарабатывай реальные деньги: ставь лайки, делись, комментируй</string>
+    <string name="skip">Пропустить</string>
 </resources>

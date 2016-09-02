@@ -112,7 +112,7 @@
 
         android:gravity="center"
 
-        android:text="@string/text_e_commerce"
+        android:text="@string/text_intro_3"
         android:textColor="@android:color/white"
         android:textSize="@dimen/text_size_large"
 

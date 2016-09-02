@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-public class MainActivity extends Activity implements View.OnClickListener {
+public class MainActivity extends Activity {
 
     public static void start(Context context) {
         context.startActivity(new Intent(context, MainActivity.class));
@@ -16,21 +16,21 @@ public class MainActivity extends Activity implements View.OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        findViewById(R.id.bRetry).setOnClickListener(this);
+     //   findViewById(R.id.bRetry).setOnClickListener(this);
 
         if (savedInstanceState == null) {
             replaceTutorialFragment();
         }
     }
-
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.bRetry:
-                replaceTutorialFragment();
-                break;
-        }
-    }
+//
+//    @Override
+//    public void onClick(View v) {
+//        switch (v.getId()) {
+//            case R.id.bRetry:
+//                replaceTutorialFragment();
+//                break;
+//        }
+//    }
 
     public void replaceTutorialFragment() {
         getFragmentManager()
