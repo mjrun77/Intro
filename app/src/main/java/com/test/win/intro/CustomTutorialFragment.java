@@ -24,7 +24,7 @@ import com.cleveroad.slidingtutorial.TutorialSupportFragment;
 import com.test.win.intro.renderer.DrawableRenderer;
 
 public class CustomTutorialFragment extends TutorialFragment
-        implements OnTutorialPageChangeListener {
+implements OnTutorialPageChangeListener {
 
     private static final String TAG = "CustomTutorialFragment";
     private static final int TOTAL_PAGES = 3;
@@ -38,30 +38,6 @@ public class CustomTutorialFragment extends TutorialFragment
     };
 
 
-    @LayoutRes
-    protected int getLayoutResId() {
-        return R.layout.fragment_presentation;
-    }
-
-    @IdRes
-    protected int getViewPagerResId() {
-        return com.cleveroad.slidingtutorial.R.id.viewPager;
-    }
-
-    @IdRes
-    protected int getIndicatorResId() {
-        return com.cleveroad.slidingtutorial.R.id.indicator;
-    }
-
-    @IdRes
-    protected int getButtonSkipResId() {
-        return R.id.tvSkipMy;
-    }
-
-    @IdRes
-    protected int getSeparatorResId() {
-        return com.cleveroad.slidingtutorial.R.id.separator;
-    }
     private final TutorialPageOptionsProvider mTutorialPageOptionsProvider = new TutorialPageOptionsProvider() {
         @NonNull
         @Override
@@ -154,6 +130,8 @@ public class CustomTutorialFragment extends TutorialFragment
             };
         }
         addOnTutorialPageChangeListener(this);
+
+
     }
 
     @Override
@@ -181,5 +159,31 @@ public class CustomTutorialFragment extends TutorialFragment
         if (position == TutorialSupportFragment.EMPTY_FRAGMENT_POSITION) {
             Log.i(TAG, "onPageChanged: Empty fragment is visible");
         }
+    }
+
+
+    @LayoutRes
+    protected int getLayoutResId() {
+        return R.layout.fragment_presentation_m;
+    }
+
+    @IdRes
+    protected int getViewPagerResId() {
+        return R.id.viewPager;
+    }
+
+    @IdRes
+    protected int getIndicatorResId() {
+        return R.id.indicator;
+    }
+
+    @IdRes
+    protected int getButtonSkipResId() {
+        return R.id.tvSkipMy;
+    }
+
+    @IdRes
+    protected int getSeparatorResId() {
+        return R.id.separator;
     }
 }
